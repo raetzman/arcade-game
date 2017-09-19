@@ -19,7 +19,7 @@ var Enemy = function() {
     }
     // also enemies have random speed
     this.speed = (0.4 + Math.random() * 1.5) * 100; // [40 - 140]; some speed value
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
@@ -46,13 +46,12 @@ var Player = function(){
     this.wins = 0;
     // as position is set more often
     this.reset();
-}
+};
 Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 Player.prototype.update = function(dt) {
     // ???
-
 };
 // sets the position, but not avatar, lives & wins
 Player.prototype.reset = function() {
@@ -86,10 +85,9 @@ Player.prototype.handleInput = function(sInput) {
     }
 };
 Player.prototype.win = function() {
-
     this.wins++;
     this.reset();
-}
+};
 // decrease lives value. and give alert if game is finished and reset
 Player.prototype.loose = function() {
     this.lives--;
@@ -106,9 +104,8 @@ Player.prototype.loose = function() {
         this.lives = 3;
         this.wins = 0;
     }
-
     this.reset();
-}
+};
 // change avatar by chaning this.sprite
 Player.prototype.changeAvatar = function() {
     console.log("Changed from: " + this.sprite);
@@ -124,7 +121,7 @@ Player.prototype.changeAvatar = function() {
         this.sprite = 'images/char-boy.png';
     }
     console.log("Changed to: " + this.sprite);
-}
+};
 // collisionTolerance seems to be ok with 50
 var collisonTolerace = 50;
 // is it in the box? - if the Enemy/bug/hater is near the avatar we loose
